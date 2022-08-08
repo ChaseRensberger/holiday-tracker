@@ -7,11 +7,12 @@
   justify-content: center;
   align-items: center;
   color: #FF0000;
-  font-size: 3vw;
+  font-size: xx-large;
+  font-weight: 800;
 }
 
 .contentRow {
-  width: 30%;
+  width: 300px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
