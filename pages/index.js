@@ -14,7 +14,7 @@ export default function Home() {
 	return (
 		<div className={styles.container}>
 			<Head>
-				<title>Luke's Holiday Tracker</title>
+				<title>Holiday Tracker</title>
 				<meta name="description" content="Luke's holiday tracker" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
