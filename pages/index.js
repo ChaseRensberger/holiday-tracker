@@ -5,11 +5,11 @@ import moment from "moment";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-
 	const [offset, setOffset] = useState(0);
 
 	let todaysHolidayObjects = holidayList.filter(
-		(holidayObject) => holidayObject.Day == moment().add(offset, 'd').format("MMM D")
+		(holidayObject) =>
+			holidayObject.Day == moment().add(offset, "d").format("MMM D")
 	);
 	let todaysHolidays = todaysHolidayObjects.map(
 		(todayHolidayObject) => todayHolidayObject.Holiday
@@ -17,12 +17,13 @@ export default function Home() {
 
 	useEffect(() => {
 		todaysHolidayObjects = holidayList.filter(
-			(holidayObject) => holidayObject.Day == moment().add(offset, 'd').format("MMM D")
+			(holidayObject) =>
+				holidayObject.Day == moment().add(offset, "d").format("MMM D")
 		);
 		todaysHolidays = todaysHolidayObjects.map(
 			(todayHolidayObject) => todayHolidayObject.Holiday
 		);
-	}, [offset])
+	}, [offset]);
 
 	return (
 		<div className={styles.container}>
@@ -34,9 +35,23 @@ export default function Home() {
 
 			<main className={styles.main}>
 				<div className={styles.contentRow}>
-				<button className={styles.button} onClick={() => {setOffset(offset-1)}}>-</button>
-					<div>{moment().add(offset, 'd').format("MMM D")}</div>
-					<button className={styles.button} onClick={() => {setOffset(offset+1)}}>+</button>
+					<button
+						className={styles.button}
+						onClick={() => {
+							setOffset(offset - 1);
+						}}
+					>
+						-
+					</button>
+					<div>{moment().add(offset, "d").format("MMM D")}</div>
+					<button
+						className={styles.button}
+						onClick={() => {
+							setOffset(offset + 1);
+						}}
+					>
+						+
+					</button>
 				</div>
 				<div>{JSON.stringify(todaysHolidays)}</div>
 			</main>
